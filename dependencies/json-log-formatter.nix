@@ -1,10 +1,10 @@
 {
   lib,
-  python312,
+  python314,
   fetchPypi,
 }:
 let
-  buildPythonPackage = python312.pkgs.buildPythonPackage;
+  buildPythonPackage = python314.pkgs.buildPythonPackage;
 in
 
 buildPythonPackage rec {
