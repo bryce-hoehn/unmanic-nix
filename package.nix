@@ -1,6 +1,6 @@
 {
   lib,
-  python312,
+  python314,
   pkgs,
   fetchFromGitHub,
   fetchNpmDeps,
@@ -8,7 +8,7 @@
   nodejs,
   git,
 }:
-python312.pkgs.buildPythonPackage rec {
+python314.pkgs.buildPythonPackage rec {
   pname = "unmanic";
   version = "0.3.0";
   format = "setuptools";
@@ -33,12 +33,12 @@ python312.pkgs.buildPythonPackage rec {
     git
   ];
 
-  propagatedBuildInputs = with python312.pkgs; [
+  propagatedBuildInputs = with python314.pkgs; [
     schedule
-    (pkgs.callPackage ./dependencies/tornado.nix { })
+    tornado
     marshmallow
     peewee
-    (pkgs.callPackage ./dependencies/peewee-migrate.nix { })
+    peewee-migrate
     psutil
     requests
     requests-toolbelt
